@@ -55,11 +55,18 @@
         }
 
         nav li:hover a {
-            color: #d94f5c;
+            color: #e6e094;
         }
 
         nav li:not(:last-child) {
             margin-right: 30px;
+        }
+
+        .pagina-actual {
+            color: rgb(41, 95, 177);
+            /* Cambia el color del texto a blanco */
+            font-weight: bold;
+            /* Puedes hacerlo en negrita para resaltarlo más*/
         }
 
         nav li:hover::before {
@@ -69,7 +76,7 @@
             right: 0;
             bottom: 0;
             height: 2px;
-            background-color: #d94f5c;
+            background-color: #e6e094;
         }
 
         #dayOfWeek {
@@ -232,10 +239,11 @@
         }
 
         footer {
+            font-size: 13px;
             background-color: black;
             color: #fff;
             text-align: left;
-            padding: 10px 10px;
+            padding: 5px 5px;
         }
     </style>
 </head>
@@ -249,7 +257,7 @@
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="quienes.html">Quiénes Somos</a></li>
-                <li><a href="productos.html">Productos</a></li>
+                <li><a href="productos.html" class="pagina-actual">Productos</a></li>
                 <li><a href="contacto.html">Contáctenos</a></li>
                 <span id="dayOfWeek"></span> <!-- Elemento para mostrar el día -->
             </ul>

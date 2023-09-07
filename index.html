@@ -55,11 +55,18 @@
         }
 
         nav li:hover a {
-            color: #d94f5c;
+            color: #e6e094;
         }
 
         nav li:not(:last-child) {
             margin-right: 30px;
+        }
+
+        .pagina-actual {
+            color: rgb(41, 95, 177);
+            /* Cambia el color del texto a blanco */
+            font-weight: bold;
+            /* Puedes hacerlo en negrita para resaltarlo más*/
         }
 
         nav li:hover::before {
@@ -69,7 +76,7 @@
             right: 0;
             bottom: 0;
             height: 2px;
-            background-color: #d94f5c;
+            background-color: #e6e094;
         }
 
         #dayOfWeek {
@@ -160,12 +167,7 @@
             /* Cada banner ocupa el 50% del ancho de la página */
             float: left;
             /* Coloca los banners uno al lado del otro */
-            text-decoration: none;
-        }
-
-        #banner-quienes h2,
-        #banner-productos h2 {
-            text-decoration: none;
+            text-decoration: none !important;
         }
 
         .banner-container {
@@ -175,7 +177,7 @@
             /* Espacio entre los banners */
             align-items: center;
             /* Centra verticalmente los elementos */
-            text-decoration: none;
+            text-decoration: none !important;
         }
 
         .banner {
@@ -185,7 +187,9 @@
             /* Centra el contenido dentro del banner */
             padding: 20px;
             /* Espaciado interno del banner */
-            text-decoration: none;
+            text-decoration: none !important;
+            margin-bottom: -2%;
+            margin-top: -2%;
         }
 
         .banner img {
@@ -205,16 +209,21 @@
             /* Espacio entre la imagen y el título */
             color: #333;
             /* Cambia el color del título */
-            text-decoration: none;
+            text-decoration: none !important;
             /* Evita la subrayado de los títulos */
         }
 
         footer {
+            font-size: 13px;
             background-color: black;
             color: #fff;
             text-align: left;
-            padding: 10px 10px;
+            padding: 5px 5px;
+            position: fixed; /* Establece la posición absoluta */
+            bottom: 0; /* Coloca el footer en la parte inferior de la ventana */
+            width: 100%; /* Ancho completo del footer */
         }
+            
     </style>
 </head>
 
@@ -225,7 +234,7 @@
         </a>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html" class="pagina-actual">Inicio</a></li>
                 <li><a href="quienes.html">Quiénes Somos</a></li>
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="contacto.html">Contáctenos</a></li>

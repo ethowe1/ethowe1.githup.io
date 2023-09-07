@@ -55,11 +55,18 @@
         }
 
         nav li:hover a {
-            color: #d94f5c;
+            color: #e6e094;
         }
 
         nav li:not(:last-child) {
             margin-right: 30px;
+        }
+
+        .pagina-actual {
+            color: rgb(41, 95, 177);
+            /* Cambia el color del texto a blanco */
+            font-weight: bold;
+            /* Puedes hacerlo en negrita para resaltarlo más*/
         }
 
         nav li:hover::before {
@@ -69,7 +76,7 @@
             right: 0;
             bottom: 0;
             height: 2px;
-            background-color: #d94f5c;
+            background-color: #e6e094;
         }
 
         #dayOfWeek {
@@ -265,15 +272,16 @@
             text-align: left;
         }
 
-        .ubicacion{
+        .ubicacion {
             margin-top: -1%;
         }
 
         footer {
+            font-size: 13px;
             background-color: black;
             color: #fff;
             text-align: left;
-            padding: 10px 10px;
+            padding: 5px 5px;
         }
     </style>
 </head>
@@ -288,7 +296,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="quienes.html">Quiénes Somos</a></li>
                 <li><a href="productos.html">Productos</a></li>
-                <li><a href="contacto.html">Contáctenos</a></li>
+                <li><a href="contacto.html" class="pagina-actual">Contáctenos</a></li>
                 <span id="dayOfWeek"></span> <!-- Elemento para mostrar el día -->
             </ul>
         </nav>
@@ -302,8 +310,10 @@
             <h2>Contacto</h2>
 
             <div class="informacion-contacto">
-                <p class="ubicacion"><strong>Ubicación:</strong> 24 de Diciembre - Centrol Comercial La Doña - Local 81</p>
-                <p class="correo"><strong>Correo Electrónico:</strong> lowens@techsolutions.com | lewinconrad@gmail.com</p>
+                <p class="ubicacion"><strong>Ubicación:</strong> 24 de Diciembre - Centrol Comercial La Doña - Local 81
+                </p>
+                <p class="correo"><strong>Correo Electrónico:</strong> lowens@techsolutions.com | lewinconrad@gmail.com
+                </p>
                 <p class="telefono"><strong>Teléfono:</strong> +507 6211-3123</p>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d1969.7730518892024!2d-79.37047459142495!3d9.10504629106505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e0!4m0!4m3!3m2!1d9.1048847!2d-79.371352!5e0!3m2!1ses!2spa!4v1694053078692!5m2!1ses!2spa"
