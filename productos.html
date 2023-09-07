@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Sitio Web</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Enlaza tu archivo de estilos CSS -->
+    <style>
+        /* CSS para el menú */
+        @import url("https://fonts.googleapis.com/css?family=Varela+Round");
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: black;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        header img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin-right: 20px;
+            position: relative;
+        }
+
+        nav li a {
+            font-size: 22px;
+            color: #777;
+            text-decoration: none;
+            transition: all 0.45s;
+        }
+
+        nav li:hover {
+            background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEi%0D%0AIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhs%0D%0AaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0%0D%0AaD0iMzkwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDM5MCA1MCIgZW5hYmxlLWJhY2tn%0D%0Acm91bmQ9Im5ldyAwIDAgMzkwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0i%0D%0Abm9uZSIgc3Ryb2tlPSIjZDk0ZjVjIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGlt%0D%0AaXQ9IjEwIiBkPSJNMCw0Ny41ODVjMCwwLDk3LjUsMCwxMzAsMAoJYzEzLjc1LDAsMjguNzQtMzgu%0D%0ANzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVj%0D%0AMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg==");
+            animation: line 1s;
+        }
+
+        nav li:hover a {
+            color: #d94f5c;
+        }
+
+        nav li:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        nav li:hover::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            background-color: #d94f5c;
+        }
+
+        #dayOfWeek {
+            color: #e6e094;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 4px;
+            flex-grow: 1;
+            /* Para ocupar todo el espacio restante en el menú */
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        #background-image {
+            background-image: url('imagen1.jpg');
+            background-size: cover;
+            /* Ajusta el tamaño de la imagen para cubrir el elemento */
+            background-position: center center;
+            /* Posición de la imagen (centrada horizontalmente y en la parte inferior) */
+            background-repeat: no-repeat;
+            /* Evita que la imagen se repita */
+            height: 260px;
+            /* Altura de la sección de la imagen de fondo */
+            margin-bottom: 2%;
+        }
+
+        #bienvenida {
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+            /* Fondo gris claro */
+        }
+
+        #bienvenida h1 {
+            font-size: 56px;
+            color: #000000;
+            /* Cambia el color del texto a blanco */
+            padding: 10px 20px;
+            /* Agrega espacio alrededor del texto */
+            border-radius: 5px;
+            /* Bordes redondeados */
+
+        }
+
+        #bienvenida p {
+            font-size: 18px;
+            color: #666;
+            /* Color de texto gris */
+
+        }
+
+        .titulo-pagina {
+            font-size: x-large;
+            position: absolute;
+            top: 25%;
+            /* Centra verticalmente */
+            left: 18%;
+            /* Centra horizontalmente */
+            transform: translate(-50%, -50%);
+            /* Centra en el medio */
+            font-size: 66px;
+            /* Tamaño de fuente del título */
+            font-weight: bold;
+            /* Texto en negrita */
+            color: #fff;
+            /* Color de texto blanco */
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            /* Sombra del texto (opcional) */
+            padding: 10px 10px;
+            /* Espacio alrededor del texto (opcional) */
+            border-radius: 5px;
+            /* Bordes redondeados (opcional) */
+            z-index: 9999;
+            /* Coloca el título encima de la imagen de fondo */
+        }
+
+        /* Establece un diseño de cuadrícula de tres columnas */
+        .productos-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* Crea tres columnas de igual ancho */
+            gap: 20px;
+            /* Espacio entre los productos */
+            background-color: #c0bebe;
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+
+        .productos-container2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* Crea tres columnas de igual ancho */
+            gap: 20px;
+            /* Espacio entre los productos */
+            border: none;
+            /* Elimina el borde */
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+
+        .productos-container3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* Crea tres columnas de igual ancho */
+            gap: 20px;
+            /* Espacio entre los productos */
+            background-color: #c0bebe;
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+
+        .productos-container4 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* Crea tres columnas de igual ancho */
+            gap: 20px;
+            /* Espacio entre los productos */
+            border: none;
+            /* Elimina el borde */
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+
+        /* Estilo de cada producto */
+        .producto {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        /* Estilo para las imágenes */
+        .producto img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h2 {
+            font-family: "Arial";
+            font-size: 28px;
+            font-weight: 1000;
+        }
+
+        h3 {
+            font-family: "Arial";
+            font-size: 20px;
+            color: rgb(20, 107, 236);
+            font-weight: 100;
+            margin-top: -5%;
+            margin-bottom: -2%;
+        }
+
+        .producto img {
+            width: 100%;
+            /* Imagen con el mismo ancho que el contenedor */
+            height: 200px;
+            /* Establece la misma altura para todas las imágenes */
+            object-fit: cover;
+            /* Ajusta la imagen para llenar completamente el contenedor */
+        }
+
+        footer {
+            background-color: black;
+            color: #fff;
+            text-align: left;
+            padding: 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="logo.png" alt="Logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="quienes.html">Quiénes Somos</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contáctenos</a></li>
+                <span id="dayOfWeek"></span> <!-- Elemento para mostrar el día -->
+            </ul>
+        </nav>
+    </header>
+    <div id="background-image">
+        <h1 class="titulo-pagina">Bienvenido a <br>TechSolutions <br>Innovate</h1>
+    </div>
+
+    <!-- Contenedor de productos -->
+
+    <!--primera linea de productos-->
+    <div class="productos-container">
+        <!-- Producto 1 -->
+        <div class="producto">
+            <img src="producto1.jpg" alt="Producto 1">
+            <h2>Desarrollo de Aplicaciones</h2>
+            <h3>Móviles Personalizadas</h3>
+            <p>Creación de aplicaciones móviles a medida para empresas que desean llegar a sus clientes a través de
+                dispositivos móviles.</p>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="producto">
+            <img src="producto2.jpg" alt="Producto 2">
+            <h2>Desarrollo de Software</h2>
+            <h3>Empresarial</h3>
+            <p>Diseño y desarrollo de software personalizado para optimizar procesos empresariales, mejorar la
+                eficiencia y la toma de decisiones.</p>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="producto">
+            <img src="producto3.jpg" alt="Producto 3">
+            <h2>Integración de</h2>
+            <h3>Sistemas y APIs</h3>
+            <p>Conexión de sistemas existentes y desarrollo de APIs personalizadas para facilitar la comunicación y el
+                intercambio de datos.</p>
+        </div>
+    </div>
+
+    <!--segunda linea de productos-->
+    <div class="productos-container2">
+        <!-- Producto 4 -->
+        <div class="producto">
+            <img src="producto4.jpg" alt="Producto 4">
+            <h2>Desarrollo de Aplicaciones</h2>
+            <h3>de Comercio Electrónico</h3>
+            <p>Creación de aplicaciones de comercio electrónico robustas y escalables para empresas que desean vender
+                productos en línea.</p>
+        </div>
+
+        <!-- Producto 5 -->
+        <div class="producto">
+            <img src="producto5.jpg" alt="Producto 5">
+            <h2>Desarrollo de Sistemas</h2>
+            <h3>de Gestión de Contenido</h3>
+            <p>Implementación y personalización de sistemas de gestión de contenido como WordPress o Drupal para
+                facilitar la administración de sitios web.</p>
+        </div>
+
+        <!-- Producto 6 -->
+        <div class="producto">
+            <img src="producto6.jpg" alt="Producto 6">
+            <h2>Automatización de</h2>
+            <h3>Procesos Empresariales</h3>
+            <p>Desarrollo de soluciones de automatización que reducen la carga de trabajo manual y mejoran la eficiencia
+                operativa.</p>
+        </div>
+    </div>
+
+    <!--tercera linea de productos-->
+    <div class="productos-container3">
+        <!-- Producto 7 -->
+        <div class="producto">
+            <img src="producto7.jpg" alt="Producto 7">
+            <h2>Servicios de Seguridad</h2>
+            <h3>Cibernética</h3>
+            <p>Implementación de medidas de seguridad, auditorías y protección contra amenazas cibernéticas para
+                garantizar la integridad de los sistemas y datos de la empresa.</p>
+        </div>
+
+        <!-- Producto 8 -->
+        <div class="producto">
+            <img src="producto8.jpg" alt="Producto 8">
+            <h2>Desarrollo de Aplicaciones</h2>
+            <h3>de Realidad Virtual/Aumentada</h3>
+            <p>Creación de experiencias de realidad virtual/aumentada personalizadas para aplicaciones de formación,
+                marketing o entretenimiento.</p>
+        </div>
+
+        <!-- Producto 9 -->
+        <div class="producto">
+            <img src="producto9.jpg" alt="Producto 9">
+            <h2>Análisis de Datos</h2>
+            <h3>y Business Intelligence</h3>
+            <p>Desarrollo de soluciones de análisis de datos avanzados que ayudan a las empresas a obtener información
+                valiosa para la toma de decisiones estratégicas.</p>
+        </div>
+    </div>
+
+    <!--cuarta linea de productos-->
+    <div class="productos-container4">
+        <!-- Producto 10 -->
+        <div class="producto">
+            <img src="producto10.jpg" alt="Producto 10">
+            <h2>Servicios de Migración</h2>
+            <h3>a la Nube y Cloud Computing</h3>
+            <p>Asesoramiento y asistencia en la migración de sistemas y aplicaciones empresariales a plataformas en la
+                nube.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        LEWIN OWENS 2016. Sitio Web con los derechos reservados
+    </footer>
+    <script>
+        // Función para obtener y mostrar el día de la semana
+        function mostrarDiaDeLaSemana() {
+            const diasSemana = ["DOMINGO", "LUNES", "MARTES", "MIÉRCOLES", "JUEVES", "VIERNES", "SÁBADO"];
+            const fecha = new Date();
+            const diaSemana = diasSemana[fecha.getDay()]; // Obtiene el día de la semana
+
+            // Actualiza el contenido del elemento span con el día de la semana
+            const elementoDia = document.getElementById("dayOfWeek");
+            elementoDia.textContent = `${diaSemana}`;
+        }
+
+        // Ejecuta la función cuando la página se carga
+        window.addEventListener("load", mostrarDiaDeLaSemana);
+    </script>
+</body>
+
+</html>

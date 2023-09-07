@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Sitio Web</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Enlaza tu archivo de estilos CSS -->
+    <style>
+        /* CSS para el menú */
+        @import url("https://fonts.googleapis.com/css?family=Varela+Round");
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: black;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        header img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin-right: 20px;
+            position: relative;
+        }
+
+        nav li a {
+            font-size: 22px;
+            color: #777;
+            text-decoration: none;
+            transition: all 0.45s;
+        }
+
+        nav li:hover {
+            background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEi%0D%0AIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhs%0D%0AaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0%0D%0AaD0iMzkwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDM5MCA1MCIgZW5hYmxlLWJhY2tn%0D%0Acm91bmQ9Im5ldyAwIDAgMzkwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0i%0D%0Abm9uZSIgc3Ryb2tlPSIjZDk0ZjVjIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGlt%0D%0AaXQ9IjEwIiBkPSJNMCw0Ny41ODVjMCwwLDk3LjUsMCwxMzAsMAoJYzEzLjc1LDAsMjguNzQtMzgu%0D%0ANzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVj%0D%0AMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg==");
+            animation: line 1s;
+        }
+
+        nav li:hover a {
+            color: #d94f5c;
+        }
+
+        nav li:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        nav li:hover::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            background-color: #d94f5c;
+        }
+
+        #dayOfWeek {
+            color: #e6e094;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 4px;
+            flex-grow: 1;
+            /* Para ocupar todo el espacio restante en el menú */
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        #background-image {
+            background-image: url('imagen1.jpg');
+            background-size: cover;
+            /* Ajusta el tamaño de la imagen para cubrir el elemento */
+            background-position: center center;
+            /* Posición de la imagen (centrada horizontalmente y en la parte inferior) */
+            background-repeat: no-repeat;
+            /* Evita que la imagen se repita */
+            height: 260px;
+            /* Altura de la sección de la imagen de fondo */
+            margin-bottom: 2%;
+        }
+
+        #bienvenida {
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+            /* Fondo gris claro */
+        }
+
+        #bienvenida h1 {
+            font-size: 56px;
+            color: #000000;
+            /* Cambia el color del texto a blanco */
+            padding: 10px 20px;
+            /* Agrega espacio alrededor del texto */
+            border-radius: 5px;
+            /* Bordes redondeados */
+        }
+
+        #bienvenida p {
+            font-size: 18px;
+            color: #666;
+            /* Color de texto gris */
+        }
+
+        .titulo-pagina {
+            font-size: x-large;
+            position: absolute;
+            top: 25%;
+            /* Centra verticalmente */
+            left: 18%;
+            /* Centra horizontalmente */
+            transform: translate(-50%, -50%);
+            /* Centra en el medio */
+            font-size: 66px;
+            /* Tamaño de fuente del título */
+            font-weight: bold;
+            /* Texto en negrita */
+            color: #fff;
+            /* Color de texto blanco */
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            /* Sombra del texto (opcional) */
+            /*background-color: rgba(0, 0, 0, 0.5); Fondo semi-transparente (opcional) */
+            padding: 10px 10px;
+            /* Espacio alrededor del texto (opcional) */
+            border-radius: 5px;
+            /* Bordes redondeados (opcional) */
+            z-index: 9999;
+            /* Coloca el título encima de la imagen de fondo */
+        }
+
+        /* Estilos para la pagina de contactenos */
+        .contenedor {
+            display: flex;
+            /* Utiliza flexbox para colocar los contenedores uno al lado del otro */
+        }
+
+        /* Establece estilos para los contenedores de izquierda y derecha */
+        .contenedor-izquierda {
+            float: left;
+            /* Coloca el contenedor a la izquierda */
+            width: 60%;
+            /* Ancho del contenedor de izquierda */
+            height: 670px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            /* Fondo gris */
+            border: none;
+            margin-bottom: 1%;
+        }
+
+        .contenedor-derecha {
+            float: right;
+            /* Coloca el contenedor a la derecha */
+            width: 40%;
+            /* Ancho del contenedor de derecha */
+            padding: 10px;
+            margin-bottom: 1%;
+        }
+
+        h2 {
+            font-family: "Arial";
+            font-size: 64px;
+            font-weight: 1000;
+            margin-bottom: 0%;
+            margin-top: -1%;
+        }
+
+        h3 {
+            font-family: "Arial";
+            font-size: 64px;
+            font-weight: 1000;
+            margin-bottom: 0%;
+            margin-top: -2%;
+        }
+
+        h4 {
+            font-family: "Arial";
+            font-size: 30px;
+            color: rgb(20, 107, 236);
+            font-weight: 100;
+            margin-top: -2%;
+            margin-bottom: 4%;
+        }
+
+
+        .informacion-contacto {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 0px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        form {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input[type="text"],
+        form input[type="tel"],
+        form input[type="email"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        form textarea {
+            width: 95%;
+            height: 140px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        form input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Estilos para la tabla en el alert */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #333;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        .ubicacion{
+            margin-top: -1%;
+        }
+
+        footer {
+            background-color: black;
+            color: #fff;
+            text-align: left;
+            padding: 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="logo.png" alt="Logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="quienes.html">Quiénes Somos</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contáctenos</a></li>
+                <span id="dayOfWeek"></span> <!-- Elemento para mostrar el día -->
+            </ul>
+        </nav>
+    </header>
+    <div id="background-image">
+        <h1 class="titulo-pagina">Bienvenido a <br>TechSolutions <br>Innovate</h1>
+    </div>
+
+    <div class="contenedor">
+        <div class="contenedor-izquierda">
+            <h2>Contacto</h2>
+
+            <div class="informacion-contacto">
+                <p class="ubicacion"><strong>Ubicación:</strong> 24 de Diciembre - Centrol Comercial La Doña - Local 81</p>
+                <p class="correo"><strong>Correo Electrónico:</strong> lowens@techsolutions.com | lewinconrad@gmail.com</p>
+                <p class="telefono"><strong>Teléfono:</strong> +507 6211-3123</p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d1969.7730518892024!2d-79.37047459142495!3d9.10504629106505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e0!4m0!4m3!3m2!1d9.1048847!2d-79.371352!5e0!3m2!1ses!2spa!4v1694053078692!5m2!1ses!2spa"
+                    width="780" height="470" style="border:none;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <div class="contenedor-derecha">
+            <h3>Formulario</h3>
+            <h4>de Contacto</h4>
+            <form id="formulario-contacto">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br>
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required><br>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required><br>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea><br>
+
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Enlaza tu archivo JavaScript -->
+
+    <footer>
+        LEWIN OWENS 2016. Sitio Web con los derechos reservados
+    </footer>
+    <script>
+        // Función para obtener y mostrar el día de la semana
+        function mostrarDiaDeLaSemana() {
+            const diasSemana = ["DOMINGO", "LUNES", "MARTES", "MIÉRCOLES", "JUEVES", "VIERNES", "SÁBADO"];
+            const fecha = new Date();
+            const diaSemana = diasSemana[fecha.getDay()]; // Obtiene el día de la semana
+
+            // Actualiza el contenido del elemento span con el día de la semana
+            const elementoDia = document.getElementById("dayOfWeek");
+            elementoDia.textContent = `${diaSemana}`;
+        }
+
+        // Ejecuta la función cuando la página se carga
+        window.addEventListener("load", mostrarDiaDeLaSemana);
+
+        // Captura el envío del formulario
+        document.getElementById("formulario-contacto").addEventListener("submit", function (e) {
+            e.preventDefault(); // Evita el envío del formulario por defecto
+
+            // Captura los valores de los campos del formulario
+            var nombre = document.getElementById("nombre").value;
+            var apellido = document.getElementById("apellido").value;
+            var telefono = document.getElementById("telefono").value;
+            var email = document.getElementById("email").value;
+            var mensaje = document.getElementById("mensaje").value;
+
+            // Crea una tabla para mostrar los datos en un alert
+            var mensajeFormatado =
+                "Nombre: " + nombre + "\n" +
+                "Apellido: " + apellido + "\n" +
+                "Teléfono: " + telefono + "\n" +
+                "Correo Electrónico: " + email + "\n" +
+                "Mensaje: " + mensaje;
+
+            // Muestra los datos en un alert
+            alert("INFORMACIÓN ENVIADA:\n\n" + mensajeFormatado);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quienes Somos</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Enlaza tu archivo de estilos CSS -->
+    <style>
+        /* CSS para el menú */
+        @import url("https://fonts.googleapis.com/css?family=Varela+Round");
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: black;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        header img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin-right: 20px;
+            position: relative;
+        }
+
+        nav li a {
+            font-size: 22px;
+            color: #777;
+            text-decoration: none;
+            transition: all 0.45s;
+        }
+
+        nav li:hover {
+            background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEi%0D%0AIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhs%0D%0AaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0%0D%0AaD0iMzkwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDM5MCA1MCIgZW5hYmxlLWJhY2tn%0D%0Acm91bmQ9Im5ldyAwIDAgMzkwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0i%0D%0Abm9uZSIgc3Ryb2tlPSIjZDk0ZjVjIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGlt%0D%0AaXQ9IjEwIiBkPSJNMCw0Ny41ODVjMCwwLDk3LjUsMCwxMzAsMAoJYzEzLjc1LDAsMjguNzQtMzgu%0D%0ANzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVj%0D%0AMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg==");
+            animation: line 1s;
+        }
+
+        nav li:hover a {
+            color: #d94f5c;
+        }
+
+        nav li:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        nav li:hover::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            background-color: #d94f5c;
+        }
+
+        #dayOfWeek {
+            color: #e6e094;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 4px;
+            flex-grow: 1;
+            /* Para ocupar todo el espacio restante en el menú */
+        }
+
+        #background-image {
+            background-image: url('imagen1.jpg');
+            background-size: cover;
+            /* Ajusta el tamaño de la imagen para cubrir el elemento */
+            background-position: center center;
+            /* Posición de la imagen (centrada horizontalmente y en la parte inferior) */
+            background-repeat: no-repeat;
+            /* Evita que la imagen se repita */
+            height: 260px;
+            /* Altura de la sección de la imagen de fondo */
+            margin-bottom: 2%;
+        }
+
+        .titulo-pagina {
+            font-family: "Arial";
+            font-size: x-large;
+            position: absolute;
+            top: 25%;
+            /* Centra verticalmente */
+            left: 18%;
+            /* Centra horizontalmente */
+            transform: translate(-50%, -50%);
+            /* Centra en el medio */
+            font-size: 66px;
+            /* Tamaño de fuente del título */
+            font-weight: bold;
+            /* Texto en negrita */
+            color: #fff;
+            /* Color de texto blanco */
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            /* Sombra del texto (opcional) */
+            padding: 10px 10px;
+            /* Espacio alrededor del texto (opcional) */
+            z-index: 9999;
+            /* Coloca el título encima de la imagen de fondo */
+
+        }
+
+        /* Estilos para el diseño de dos columnas */
+        .content {
+            display: flex;
+            padding: 20px;
+        }
+
+        .columna {
+            flex: 1;
+            padding: 20px;
+            padding-top: 0%;
+        }
+
+        .columna:nth-child(2) {
+            background-color: #c0bebe;
+            /* Color de fondo para la columna del gerente */
+        }
+
+        /* Estilos para los contenidos */
+        h2 {
+            font-family: "Arial";
+            font-size: 64px;
+            font-weight: 1000;
+            margin-bottom: 0%;
+            margin-top: -5%;
+        }
+
+        h3 {
+            font-family: "Arial";
+            font-size: 30px;
+            font-weight: 100;
+            color: rgb(20, 107, 236);
+            margin-bottom: -2%;
+        }
+
+        h4 {
+            font-family: "Arial";
+            font-size: 30px;
+            color: rgb(20, 107, 236);
+            font-weight: 100;
+            margin-top: -8%;
+            margin-bottom: -2%;
+        }
+
+        h5 {
+            font-family: "Arial";
+            font-size: 30px;
+            color: rgb(20, 107, 236);
+            font-weight: 100;
+            margin-top: -3%;
+            margin-bottom: -2%;
+        }
+
+        h6 {
+            font-family: "Arial";
+            font-size: 30px;
+            font-weight: 500;
+            color: rgb(161, 161, 161);
+            margin-bottom: -5%;
+            margin-top: 0%;
+        }
+
+        h7 {
+            font-family: "Arial";
+            font-size: 64px;
+            font-weight: 1000;
+            margin-bottom: 0%;
+            margin-top: -5%;
+        }
+
+        p {
+            color: #666;
+        }
+
+        .img-gerente {
+            margin-top: 5%;
+            width: 100%;
+            /* Ancho del contenedor al 100% */
+            height: 650px;
+            /* Altura fija de la imagen */
+            object-fit: cover;
+            /* Corta la imagen verticalmente */
+            text-decoration: none;
+
+        }
+
+        .img-marcas {
+            margin-top: 5%;
+            width: 100%;
+            /* Ancho del contenedor al 100% */
+            object-fit: cover;
+            /* Corta la imagen verticalmente */
+            text-decoration: none;
+            margin-bottom: -10%;
+        }
+
+        .parrafo-con-linea {
+            border-bottom: 4px solid rgb(61, 97, 151);
+            /* Puedes ajustar el grosor y el color de la línea según tus preferencias */
+        }
+
+        .parrafo-sin-linea {
+            margin-bottom: -20%;
+        }
+
+        .parrofo-gerente {
+            margin-top: 0%;
+            margin-bottom: -25%;
+        }
+
+        footer {
+            background-color: black;
+            color: #fff;
+            text-align: left;
+            padding: 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="logo.png" alt="Logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="quienes.html">Quiénes Somos</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contáctenos</a></li>
+                <span id="dayOfWeek"></span> <!-- Elemento para mostrar el día -->
+            </ul>
+        </nav>
+    </header>
+    <div id="background-image">
+        <h1 class="titulo-pagina">Bienvenido a <br>TechSolutions <br>Innovate</h1>
+    </div>
+
+    <section class="content">
+        <!-- Columna 1 - Quiénes Somos -->
+        <div class="columna">
+            <h2>Quiénes</h2><br>
+            <h4>Somos</h4>
+            <p class="parrafo-con-linea">Somos una empresa de tecnología con una pasión por la innovación y la
+                excelencia en el desarrollo de
+                software. Fundada en 2023, hemos crecido constantemente y hemos evolucionado para convertirnos en un
+                líder reconocido en la industria de la tecnología.<br>
+                <br>
+                En TechSolutions Innovate, valoramos la colaboración y el trabajo en equipo. Creemos que las mejores
+                soluciones provienen de la cooperación estrecha y la comunicación abierta con nuestros clientes. Nos
+                enorgullece la relación a largo plazo que hemos construido con muchas empresas exitosas a lo largo de
+                los años.<br>
+                <br>
+                Nuestro compromiso con la calidad se refleja en cada producto y servicio que entregamos. La colaboración
+                es el corazón de nuestra empresa, y trabajamos juntos con nuestros clientes para alcanzar metas comunes.
+                Estamos comprometidos con la excelencia y la satisfacción del cliente en cada proyecto que
+                emprendemos.<br>
+                <br>
+                Mientras miramos hacia el futuro, nuestra visión es convertirnos en líderes indiscutibles en la
+                industria de la tecnología. Buscamos marcar la diferencia mediante la entrega de soluciones que
+                transformen y mejoren la forma en que las empresas operan en el mundo digital.<br>
+                En resumen, en TechSolutions Innovate, estamos dedicados a impulsar el éxito tecnológico de nuestros
+                clientes y aportar innovación y calidad a todo lo que hacemos.
+                <br>
+                <br>
+            </p>
+
+            <h3>Misión</h3>
+            <p class="parrafo-con-linea">Nuestra misión es simple pero poderosa: Proporcionar soluciones tecnológicas
+                innovadoras que impulsen el
+                éxito de nuestros clientes. Estamos comprometidos en brindar servicios y productos de la más alta
+                calidad que cumplan con las expectativas de nuestros clientes y superen sus necesidades.<br><br></p>
+
+            <h3>Visión</h3>
+            <p class="parrafo-sin-linea">Nuestra visión es convertirnos en líderes en la industria de la tecnología,
+                brindando soluciones que
+                marquen la diferencia.</p>
+        </div>
+
+        <!-- Columna 2 - Gerente -->
+        <div class="columna">
+            <img class="img-gerente" src="gerente.jpg" alt="Gerente de la empresa">
+            <h7>Gerente</h7>
+            <p class="parrofo-gerente">Como líder de esta organización, es un honor para mí guiar a nuestro talentoso
+                equipo en la realización de esta visión ambiciosa. Creo en el poder de la colaboración y la dedicación,
+                y estoy comprometido a brindar un ambiente donde cada miembro pueda alcanzar su máximo potencial.
+                Nuestro compromiso con la calidad y la innovación es inquebrantable, y siempre estamos dispuestos a
+                superar los desafíos para lograr nuestros objetivos.<br>
+                A medida que avanzamos, invitamos a todos nuestros empleados, socios y clientes a unirse a nosotros en
+                este emocionante viaje. Juntos, alcanzaremos nuevas alturas y dejaremos una huella duradera en la
+                industria.</p>
+        </div>
+
+        <!-- Columna 3 - Valores -->
+        <div class="columna">
+            <h2>Nuestros</h2>
+            <h5>Valores</h5>
+            <ul>
+                <li>
+                    <h6>Innovación:</h6>
+                    <p class="parrafo-con-linea">Buscamos constantemente nuevas soluciones y enfoques para los desafíos
+                        tecnológicos.<br><br></p>
+                </li>
+                <li>
+                    <h6>Calidad:</h6>
+                    <p class="parrafo-con-linea">Entregamos productos y servicios de alta calidad que cumplen con las
+                        expectativas de nuestros clientes.<br><br></p>
+                </li>
+                <li>
+                    <h6>Colaboración:</h6>
+                    <p class="parrafo-con-linea">Trabajamos en equipo y colaboramos estrechamente con nuestros
+                        clientes para lograr el éxito conjunto.<br><br></p>
+                </li>
+                <li>
+                    <h6>Compromiso:</h6>
+                    <p class="parrafo-con-linea">Estamos comprometidos con la excelencia y la satisfacción del cliente
+                        en cada proyecto que emprendemos.<br><br></p>
+                </li>
+            </ul>
+            <img class="img-marcas" src="marcas.png" alt="Gerente de la empresa">
+        </div>
+    </section>
+
+    </section>
+
+    <footer>
+        LEWIN OWENS 2016. Sitio Web con los derechos reservados
+    </footer>
+    <script>
+        // Función para obtener y mostrar el día de la semana
+        function mostrarDiaDeLaSemana() {
+            const diasSemana = ["DOMINGO", "LUNES", "MARTES", "MIÉRCOLES", "JUEVES", "VIERNES", "SÁBADO"];
+            const fecha = new Date();
+            const diaSemana = diasSemana[fecha.getDay()]; // Obtiene el día de la semana
+
+            // Actualiza el contenido del elemento span con el día de la semana
+            const elementoDia = document.getElementById("dayOfWeek");
+            elementoDia.textContent = `${diaSemana}`;
+        }
+
+        // Ejecuta la función cuando la página se carga
+        window.addEventListener("load", mostrarDiaDeLaSemana);
+    </script>
+</body>
+
+</html>
